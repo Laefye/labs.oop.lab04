@@ -44,9 +44,9 @@ Matrix MatrixBuilder::move(double x, double y, double z) {
 
 Matrix MatrixBuilder::scale(double x, double y, double z) {
     return Matrix({
-        {x, 0, 0, 0},
-        {0, y, 0, 0},
-        {0, 0, z, 0},
-        {0, 0, 0, 1}
+                {x, 0, 0, 0},
+                {0, y, 0, 0},
+                {0, 0, z, 0},
+                {0, 0, 0, 1}
     });
 }

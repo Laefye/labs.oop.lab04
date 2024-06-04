@@ -44,6 +44,7 @@ void Facade::setTransform(const Point& position, const Point& rotation, const Po
         figure->setRotation(rotation);
         figure->setScale(scale);
     }
+    draw();
 }
 
 void Facade::getTransform(Point& position, Point& rotation, Point& scale) {
@@ -51,10 +52,15 @@ void Facade::getTransform(Point& position, Point& rotation, Point& scale) {
         position = Point(0, 0, 0);
         rotation = Point(0, 0, 0);
         scale = Point(1, 1, 1);
+        return;
     }
     Scene& scene = this->scene();
     std::shared_ptr<Figure> figure = scene.figures()[0];
     position = figure->position();
     rotation = figure->rotation();
     scale = figure->scale();
+}
+
+bool Facade::isLoaded() {
+    return _scene;
 }

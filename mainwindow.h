@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "facade.h"
 #include "qtscenedrawer.h"
+#include <QDoubleSpinBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,5 +28,10 @@ private:
     void selectFile();
     void loadFile();
     void showError(QString message);
+    void updateUi();
+    void setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point, bool enabled);
+    Point getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z);
+private slots:
+    void setTransform();
 };
 #endif // MAINWINDOW_H

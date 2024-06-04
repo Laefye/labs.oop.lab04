@@ -24,6 +24,7 @@ public:
     void draw();
     void setTransform(const Point& position, const Point& rotation, const Point& scale);
     void getTransform(Point& position, Point& rotation, Point& scale);
+    bool isLoaded();
 };
 
 #endif // FACADE_H

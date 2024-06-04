@@ -7,6 +7,7 @@
 #include "engine/point.h"
 #include "engine/exceptions/scenenotloadedexception.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , drawer(this)
@@ -27,9 +28,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->scaleY, SIGNAL(valueChanged(double)), SLOT(setTransform()));
     connect(ui->scaleZ, SIGNAL(valueChanged(double)), SLOT(setTransform()));
     connect(ui->scaleByAllAxis, SIGNAL(stateChanged(int)), SLOT(setTransform()));
+    connect(ui->normilize, &QPushButton::clicked, this, &MainWindow::openNormilizationDialog);
+
+    normalization = {
+        .min = 1,
+        .max = 10,
+        .use = false
+    };
 
     QGridLayout* layout = (QGridLayout*) this->centralWidget()->layout();
     layout->addWidget(&this->drawer, 1, 0, 1, 2);
+
+    updateUi();
 }
 
 MainWindow::~MainWindow()
@@ -100,9 +110,20 @@ void MainWindow::selectFile() {
 
 void MainWindow::loadFile() {
     try {
-        facade.loadScene(ui->filename->text().toStdString());
+        if (normalization.use) {
+            facade.loadScene(ui->filename->text().toStdString(), NormalizationParameters(normalization.min, normalization.max));
+        } else {
+            facade.loadScene(ui->filename->text().toStdString());
+        }
         updateUi();
     } catch (std::exception& e) {
         showError(e.what());
+    }
+}
+
+void MainWindow::openNormilizationDialog() {
+    NormalizationDialog dialog(&normalization, this);
+    if (dialog.exec()) {
+        normalization = dialog.result();
     }
 }

@@ -10,7 +10,7 @@ std::shared_ptr<Figure> GraphBuilder::build() {
     for (size_t i = 0; i < values.size(); i++) {
         std::vector<Vertex> row;
         for (size_t j = 0; j < values.size(); j++) {
-            row.push_back(Vertex(Point(i, j, values[i][j])));
+            row.push_back(Vertex(Point(j, i, values[i][j])));
         }
         rows.push_back(row);
     }

@@ -5,6 +5,7 @@
 #include "engine/facade.h"
 #include "qtscenedrawer.h"
 #include <QDoubleSpinBox>
+#include "normalizationdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,6 +25,7 @@ private:
     QtSceneDrawer drawer;
     Facade facade;
     Ui::MainWindow *ui;
+    NormalizationDialog::Result normalization;
 
     void selectFile();
     void loadFile();
@@ -32,6 +34,7 @@ private:
     void updateEnabled();
     void setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point);
     Point getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z);
+    void openNormilizationDialog();
 private slots:
     void setTransform();
 };

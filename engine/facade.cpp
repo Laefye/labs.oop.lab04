@@ -24,6 +24,7 @@ void Facade::loadScene(const std::string& path, const NormalizationParameters& p
     delete this->_scene;
     this->_scene = 0;
     this->_scene = new Scene(reader->read(path, params));
+    draw();
 }
 
 Scene& Facade::scene() {

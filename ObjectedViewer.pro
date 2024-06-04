@@ -20,6 +20,7 @@ SOURCES += \
     engine/matrix.cpp \
     engine/matrixbuilder.cpp \
     engine/point.cpp \
+    normalizationdialog.cpp \
     qtscenedrawer.cpp \
     engine/scene.cpp \
     engine/vertex.cpp
@@ -42,6 +43,7 @@ HEADERS += \
     engine/matrix.h \
     engine/matrixbuilder.h \
     engine/point.h \
+    normalizationdialog.h \
     qtscenedrawer.h \
     engine/scene.h \
     engine/scenedrawerbase.h \
@@ -49,7 +51,8 @@ HEADERS += \
     engine/vertex.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    normalizationdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -4,8 +4,8 @@
 #include <QFileDialog>
 #include <exception>
 #include <QMessageBox>
-#include "point.h"
-#include "exceptions/scenenotloadedexception.h"
+#include "engine/point.h"
+#include "engine/exceptions/scenenotloadedexception.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

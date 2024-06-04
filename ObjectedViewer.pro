@@ -9,44 +9,44 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    edge.cpp \
-    facade.cpp \
-    figure.cpp \
-    filereader.cpp \
-    graphbuilder.cpp \
-    normalizationparameters.cpp \
+    engine/edge.cpp \
+    engine/facade.cpp \
+    engine/figure.cpp \
+    engine/filereader.cpp \
+    engine/graphbuilder.cpp \
+    engine/normalizationparameters.cpp \
     main.cpp \
     mainwindow.cpp \
-    matrix.cpp \
-    matrixbuilder.cpp \
-    point.cpp \
+    engine/matrix.cpp \
+    engine/matrixbuilder.cpp \
+    engine/point.cpp \
     qtscenedrawer.cpp \
-    scene.cpp \
-    vertex.cpp
+    engine/scene.cpp \
+    engine/vertex.cpp
 
 HEADERS += \
-    basefilereader.h \
-    edge.h \
-    exceptions/filenotopenedexception.h \
-    exceptions/incorrectfileexception.h \
-    exceptions/incorrectindexexception.h \
-    exceptions/incorrectsize.h \
-    exceptions/scenenotloadedexception.h \
-    facade.h \
-    figure.h \
-    figurebuilder.h \
-    filereader.h \
-    graphbuilder.h \
-    normalizationparameters.h \
+    engine/basefilereader.h \
+    engine/edge.h \
+    engine/exceptions/filenotopenedexception.h \
+    engine/exceptions/incorrectfileexception.h \
+    engine/exceptions/incorrectindexexception.h \
+    engine/exceptions/incorrectsize.h \
+    engine/exceptions/scenenotloadedexception.h \
+    engine/facade.h \
+    engine/figure.h \
+    engine/figurebuilder.h \
+    engine/filereader.h \
+    engine/graphbuilder.h \
+    engine/normalizationparameters.h \
     mainwindow.h \
-    matrix.h \
-    matrixbuilder.h \
-    point.h \
+    engine/matrix.h \
+    engine/matrixbuilder.h \
+    engine/point.h \
     qtscenedrawer.h \
-    scene.h \
-    scenedrawerbase.h \
-    sceneobject.h \
-    vertex.h
+    engine/scene.h \
+    engine/scenedrawerbase.h \
+    engine/sceneobject.h \
+    engine/vertex.h
 
 FORMS += \
     mainwindow.ui

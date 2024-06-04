@@ -1,8 +1,8 @@
 #ifndef QTSCENEDRAWER_H
 #define QTSCENEDRAWER_H
 #include <QWidget>
-#include "scene.h"
-#include "scenedrawerbase.h"
+#include "engine/scene.h"
+#include "engine/scenedrawerbase.h"
 
 class QtSceneDrawer : public QWidget, public SceneDrawerBase
 {

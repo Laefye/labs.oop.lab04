@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "facade.h"
+#include "engine/facade.h"
 #include "qtscenedrawer.h"
 #include <QDoubleSpinBox>
 

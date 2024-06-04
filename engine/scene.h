@@ -1,7 +1,7 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include <vector>
-#include <figure.h>
+#include "figure.h"
 #include <memory>
 
 class Scene

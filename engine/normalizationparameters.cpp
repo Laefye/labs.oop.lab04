@@ -36,7 +36,9 @@ void NormalizationParameters::normilize(std::vector<std::vector<double>>& values
     }
     for (std::vector<double>& row : values) {
         for (double& cell : row) {
-            cell = _min + (cell - min)/(max - min) * (_max - _min);
+            if (max - min != 0) {
+                cell = _min + (cell - min)/(max - min) * (_max - _min);
+            }
         }
     }
 }

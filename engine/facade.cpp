@@ -65,3 +65,8 @@ void Facade::getTransform(Point& position, Point& rotation, Point& scale) {
 bool Facade::isLoaded() {
     return _scene;
 }
+
+void Facade::setProjection(Projection* projection) {
+    this->drawer->setProjection(projection);
+    draw();
+}

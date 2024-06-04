@@ -15,6 +15,9 @@ SOURCES += \
     engine/filereader.cpp \
     engine/scene/graphbuilder.cpp \
     engine/normalizationparameters.cpp \
+    engine/scene/orthogonal.cpp \
+    engine/scene/perspective.cpp \
+    engine/scene/scenedrawerbase.cpp \
     main.cpp \
     mainwindow.cpp \
     engine/math/matrix.cpp \
@@ -39,6 +42,9 @@ HEADERS += \
     engine/filereader.h \
     engine/scene/graphbuilder.h \
     engine/normalizationparameters.h \
+    engine/scene/orthogonal.h \
+    engine/scene/perspective.h \
+    engine/scene/projection.h \
     mainwindow.h \
     engine/math/matrix.h \
     engine/math/matrixbuilder.h \

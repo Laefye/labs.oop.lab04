@@ -20,12 +20,12 @@ void QtSceneDrawer::paintEvent(QPaintEvent *event) {
     painter.setPen(Qt::white);
     for (std::shared_ptr<Figure> figure : this->scene->figures()) {
         for (Edge& edge : figure->edges()) {
-            Point begin = figure->transform(edge.begin().position());
-            Point end = figure->transform(edge.end().position());
+            Point begin = project(figure->transform(edge.begin().position()));
+            Point end = project(figure->transform(edge.end().position()));
             painter.drawLine(begin.X() + width() / 2, height() / 2 - begin.Z(), end.X() + width() / 2, height() / 2 - end.Z());
         }
         for (Vertex& vertex : figure->vertices()) {
-            Point point = figure->transform(vertex.position());
+            Point point = project(figure->transform(vertex.position()));
             painter.drawEllipse(point.X() + width() / 2 - 2, height() / 2 - point.Z() - 2, 4, 4);
         }
     }

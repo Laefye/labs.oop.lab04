@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include "engine/math/point.h"
 #include "engine/exceptions/scenenotloadedexception.h"
+#include "engine/scene/perspective.h"
+#include "engine/scene/orthogonal.h"
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->scaleZ, SIGNAL(valueChanged(double)), SLOT(setTransform()));
     connect(ui->scaleByAllAxis, SIGNAL(stateChanged(int)), SLOT(setTransform()));
     connect(ui->normilize, &QPushButton::clicked, this, &MainWindow::openNormilizationDialog);
+    connect(ui->perspective, SIGNAL(stateChanged(int)), SLOT(setProjection()));
 
     normalization = {
         .min = 1,
@@ -96,6 +99,7 @@ void MainWindow::updateEnabled() {
     ui->scaleY->setEnabled(facade.isLoaded() && !ui->scaleByAllAxis->isChecked());
     ui->scaleZ->setEnabled(facade.isLoaded() && !ui->scaleByAllAxis->isChecked());
     ui->scaleByAllAxis->setEnabled(facade.isLoaded());
+    ui->perspective->setEnabled(facade.isLoaded());
 }
 
 void MainWindow::selectFile() {
@@ -125,5 +129,13 @@ void MainWindow::openNormilizationDialog() {
     NormalizationDialog dialog(&normalization, this);
     if (dialog.exec()) {
         normalization = dialog.result();
+    }
+}
+
+void MainWindow::setProjection() {
+    if (ui->perspective->isChecked()) {
+        facade.setProjection(new Perspective());
+    } else {
+        facade.setProjection(new Orthogonal());
     }
 }

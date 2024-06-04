@@ -36,6 +36,7 @@ private:
     Point getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z);
     void openNormilizationDialog();
 private slots:
+    void setProjection();
     void setTransform();
 };
 #endif // MAINWINDOW_H

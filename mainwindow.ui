@@ -45,18 +45,8 @@
        <string>Transform</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="1" column="1">
-        <widget class="QDoubleSpinBox" name="positionY">
-         <property name="minimum">
-          <double>-1000.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>1000.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QDoubleSpinBox" name="rotationY">
+       <item row="3" column="0">
+        <widget class="QDoubleSpinBox" name="rotationX">
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -78,13 +68,49 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QDoubleSpinBox" name="positionX">
+       <item row="3" column="2">
+        <widget class="QDoubleSpinBox" name="rotationZ">
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
          <property name="maximum">
           <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QDoubleSpinBox" name="scaleZ">
+         <property name="minimum">
+          <double>-1000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QDoubleSpinBox" name="positionZ">
+         <property name="minimum">
+          <double>-1000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QWidget" name="widget" native="true"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="rotation">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Rotation</string>
          </property>
         </widget>
        </item>
@@ -111,6 +137,26 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="QDoubleSpinBox" name="positionX">
+         <property name="minimum">
+          <double>-1000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QDoubleSpinBox" name="positionY">
+         <property name="minimum">
+          <double>-1000.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>1000.000000000000000</double>
+         </property>
+        </widget>
+       </item>
        <item row="5" column="1">
         <widget class="QDoubleSpinBox" name="scaleY">
          <property name="minimum">
@@ -121,8 +167,8 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QDoubleSpinBox" name="scaleZ">
+       <item row="3" column="1">
+        <widget class="QDoubleSpinBox" name="rotationY">
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -131,49 +177,10 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
-        <widget class="QWidget" name="widget" native="true"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="rotation">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+       <item row="7" column="0" colspan="3">
+        <widget class="QCheckBox" name="perspective">
          <property name="text">
-          <string>Rotation</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QDoubleSpinBox" name="rotationZ">
-         <property name="minimum">
-          <double>-1000.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>1000.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QDoubleSpinBox" name="rotationX">
-         <property name="minimum">
-          <double>-1000.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>1000.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QDoubleSpinBox" name="positionZ">
-         <property name="minimum">
-          <double>-1000.000000000000000</double>
-         </property>
-         <property name="maximum">
-          <double>1000.000000000000000</double>
+          <string>Perspective</string>
          </property>
         </widget>
        </item>

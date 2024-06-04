@@ -9,27 +9,37 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    edge.cpp \
+    figure.cpp \
     filereader.cpp \
+    graphbuilder.cpp \
     normalizationparameters.cpp \
     main.cpp \
     mainwindow.cpp \
     matrix.cpp \
     matrixbuilder.cpp \
     point.cpp \
-    scene.cpp
+    scene.cpp \
+    vertex.cpp
 
 HEADERS += \
     basefilereader.h \
+    edge.h \
     exceptions/incorrectfileexception.h \
     exceptions/incorrectindexexception.h \
     exceptions/incorrectsize.h \
+    figure.h \
+    figurebuilder.h \
     filereader.h \
+    graphbuilder.h \
     normalizationparameters.h \
     mainwindow.h \
     matrix.h \
     matrixbuilder.h \
     point.h \
-    scene.h
+    scene.h \
+    sceneobject.h \
+    vertex.h
 
 FORMS += \
     mainwindow.ui

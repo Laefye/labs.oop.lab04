@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    NormalizationParameters params;
+    NormalizationParameters params(0, 10);
     FileReader reader;
     reader.read("/home/laefye/Downloads/meow.csv", params);
 }

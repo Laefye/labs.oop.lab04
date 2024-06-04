@@ -10,8 +10,9 @@ private:
 public:
     Point();
     Point(double x, double y, double z);
-    Point(const Point& point) = default;
-    Point(Point&& point) = default;
+    Point(const Point& point);
+
+    Point& operator=(const Point& other);
 
     double X() const;
     double Y() const;

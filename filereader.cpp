@@ -1,8 +1,9 @@
 #include "filereader.h"
 #include <fstream>
+#include "graphbuilder.h"
 #include "exceptions/incorrectfileexception.h"
 
-Scene FileReader::read(const std::string& path, const NormalizationParameters& parameters) {
+std::vector<std::vector<double>> FileReader::open(const std::string& path) {
     std::ifstream in(path, std::ios_base::in);
     std::vector<std::vector<double>> rows;
     while (!in.eof()) {
@@ -17,6 +18,18 @@ Scene FileReader::read(const std::string& path, const NormalizationParameters& p
     if (rows.size() == 0) {
         throw IncorrectFileException();
     }
+    return rows;
+}
+
+Scene FileReader::read(const std::string& path) {
+
+    return Scene();
+}
+
+Scene FileReader::read(const std::string& path, const NormalizationParameters& parameters) {
+    std::vector<std::vector<double>> values = open(path);
+    parameters.normilize(values);
+    Figure figure = GraphBuilder(values).build();
     return Scene();
 }
 

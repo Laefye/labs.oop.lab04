@@ -12,6 +12,19 @@ Point::Point(double x, double y, double z) {
     this->z = z;
 }
 
+Point::Point(const Point& point) {
+    this->x = point.x;
+    this->y = point.y;
+    this->z = point.z;
+}
+
+Point& Point::operator=(const Point& other) {
+    x = other.x;
+    y = other.y;
+    z = other.z;
+    return *this;
+}
+
 double Point::X() const {
     return x;
 }

@@ -27,6 +27,7 @@ SOURCES += \
 HEADERS += \
     basefilereader.h \
     edge.h \
+    exceptions/filenotopenedexception.h \
     exceptions/incorrectfileexception.h \
     exceptions/incorrectindexexception.h \
     exceptions/incorrectsize.h \

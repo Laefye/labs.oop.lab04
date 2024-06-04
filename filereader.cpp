@@ -2,9 +2,13 @@
 #include <fstream>
 #include "graphbuilder.h"
 #include "exceptions/incorrectfileexception.h"
+#include "exceptions/filenotopenedexception.h"
 
 std::vector<std::vector<double>> FileReader::open(const std::string& path) {
     std::ifstream in(path, std::ios_base::in);
+    if (!in.good()) {
+        throw FileNotOpenedException();
+    }
     std::vector<std::vector<double>> rows;
     while (!in.eof()) {
         std::string line;

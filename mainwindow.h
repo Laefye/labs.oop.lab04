@@ -23,5 +23,9 @@ private:
     QtSceneDrawer drawer;
     Facade facade;
     Ui::MainWindow *ui;
+
+    void selectFile();
+    void loadFile();
+    void showError(QString message);
 };
 #endif // MAINWINDOW_H

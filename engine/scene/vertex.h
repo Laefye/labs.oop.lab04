@@ -1,6 +1,6 @@
 #ifndef VERTEX_H
 #define VERTEX_H
-#include "point.h"
+#include "../math/point.h"
 #include <memory>
 
 

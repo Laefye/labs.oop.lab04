@@ -1,6 +1,6 @@
 #ifndef BASEFILEREADER_H
 #define BASEFILEREADER_H
-#include "scene.h"
+#include "scene/scene.h"
 #include "normalizationparameters.h"
 #include <string>
 

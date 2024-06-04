@@ -4,7 +4,7 @@
 #include <QFileDialog>
 #include <exception>
 #include <QMessageBox>
-#include "engine/point.h"
+#include "engine/math/point.h"
 #include "engine/exceptions/scenenotloadedexception.h"
 
 

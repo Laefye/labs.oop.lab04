@@ -1,6 +1,6 @@
 #include "filereader.h"
 #include <fstream>
-#include "graphbuilder.h"
+#include "scene/graphbuilder.h"
 #include "exceptions/incorrectfileexception.h"
 #include "exceptions/filenotopenedexception.h"
 

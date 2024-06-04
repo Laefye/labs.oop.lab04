@@ -1,6 +1,6 @@
 #ifndef SCENEOBJECT_H
 #define SCENEOBJECT_H
-#include "point.h"
+#include "../math/point.h"
 
 class SceneObject {
 public:

@@ -1,11 +1,11 @@
 #ifndef FACADE_H
 #define FACADE_H
 #include "basefilereader.h"
-#include "scene.h"
+#include "scene/scene.h"
 #include "normalizationparameters.h"
 #include <string>
-#include "scenedrawerbase.h"
-#include "point.h"
+#include "scene/scenedrawerbase.h"
+#include "math/point.h"
 
 class Facade
 {

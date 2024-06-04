@@ -1,7 +1,7 @@
 #ifndef FILEREADER_H
 #define FILEREADER_H
 #include "basefilereader.h"
-#include "scene.h"
+#include "scene/scene.h"
 #include "normalizationparameters.h"
 #include <vector>
 

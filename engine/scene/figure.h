@@ -3,7 +3,7 @@
 #include "sceneobject.h"
 #include "vertex.h"
 #include "edge.h"
-#include "point.h"
+#include "../math/point.h"
 #include <vector>
 
 class Figure : public SceneObject

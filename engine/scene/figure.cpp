@@ -1,6 +1,6 @@
 #include "figure.h"
-#include "matrix.h"
-#include "matrixbuilder.h"
+#include "../math/matrix.h"
+#include "../math/matrixbuilder.h"
 
 Figure::Figure(const std::vector<Vertex>& vertices, const std::vector<Edge>& edges) : _vertices(vertices), _edges(edges) {
     _position = Point(0, 0, 0);

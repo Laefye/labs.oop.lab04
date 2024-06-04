@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 #include "vertex.h"
-#include "point.h"
+#include "../math/point.h"
 #include <memory>
 
 class Edge

@@ -10,7 +10,7 @@ private:
 public:
     GraphBuilder(std::vector<std::vector<double>>& values);
 
-    Figure build() override;
+    std::shared_ptr<Figure> build() override;
 };
 
 #endif // GRAPHBUILDER_H

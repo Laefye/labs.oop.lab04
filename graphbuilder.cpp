@@ -4,7 +4,7 @@ GraphBuilder::GraphBuilder(std::vector<std::vector<double>>& values) : values(va
 
 }
 
-Figure GraphBuilder::build() {
+std::shared_ptr<Figure> GraphBuilder::build() {
     std::vector<std::vector<Vertex>> rows;
     std::vector<Edge> edges;
     for (size_t i = 0; i < values.size(); i++) {
@@ -30,5 +30,5 @@ Figure GraphBuilder::build() {
             vertices.push_back(vertex);
         }
     }
-    return Figure(vertices, edges);
+    return std::make_shared<Figure>(vertices, edges);
 }

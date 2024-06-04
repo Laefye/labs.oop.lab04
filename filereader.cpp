@@ -29,8 +29,9 @@ Scene FileReader::read(const std::string& path) {
 Scene FileReader::read(const std::string& path, const NormalizationParameters& parameters) {
     std::vector<std::vector<double>> values = open(path);
     parameters.normilize(values);
-    Figure figure = GraphBuilder(values).build();
-    return Scene();
+    Scene scene;
+    scene.add(GraphBuilder(values).build());
+    return scene;
 }
 
 std::vector<double> FileReader::parse(const std::string& originalLine) {

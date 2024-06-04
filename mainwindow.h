@@ -29,7 +29,8 @@ private:
     void loadFile();
     void showError(QString message);
     void updateUi();
-    void setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point, bool enabled);
+    void updateEnabled();
+    void setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point);
     Point getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z);
 private slots:
     void setTransform();

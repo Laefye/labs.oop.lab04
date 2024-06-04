@@ -26,11 +26,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->scaleX, SIGNAL(valueChanged(double)), SLOT(setTransform()));
     connect(ui->scaleY, SIGNAL(valueChanged(double)), SLOT(setTransform()));
     connect(ui->scaleZ, SIGNAL(valueChanged(double)), SLOT(setTransform()));
+    connect(ui->scaleByAllAxis, SIGNAL(stateChanged(int)), SLOT(setTransform()));
 
     QGridLayout* layout = (QGridLayout*) this->centralWidget()->layout();
     layout->addWidget(&this->drawer, 1, 0, 1, 2);
-
-    updateUi();
 }
 
 MainWindow::~MainWindow()
@@ -44,13 +43,10 @@ void MainWindow::showError(QString message) {
     box.exec();
 }
 
-void MainWindow::setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point, bool enabled) {
+void MainWindow::setPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z, const Point& point) {
     x->setValue(point.X());
-    x->setEnabled(enabled);
     y->setValue(point.Y());
-    y->setEnabled(enabled);
     z->setValue(point.Z());
-    z->setEnabled(enabled);
 }
 
 Point MainWindow::getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox* z) {
@@ -58,11 +54,12 @@ Point MainWindow::getPoint(QDoubleSpinBox* x, QDoubleSpinBox* y, QDoubleSpinBox*
 }
 
 void MainWindow::setTransform() {
+    updateEnabled();
     try {
         facade.setTransform(
             getPoint(ui->positionX, ui->positionY, ui->positionZ),
             getPoint(ui->rotationX, ui->rotationY, ui->rotationZ),
-            getPoint(ui->scaleX, ui->scaleY, ui->scaleZ)
+            getPoint(ui->scaleX, ui->scaleByAllAxis->isChecked() ? ui->scaleX : ui->scaleY, ui->scaleByAllAxis->isChecked() ? ui->scaleX : ui->scaleZ)
         );
     } catch (SceneNotLoadedException& e) {
 
@@ -72,9 +69,23 @@ void MainWindow::setTransform() {
 void MainWindow::updateUi() {
     Point position, rotation, scale;
     facade.getTransform(position, rotation, scale);
-    setPoint(ui->positionX, ui->positionY, ui->positionZ, position, facade.isLoaded());
-    setPoint(ui->rotationX, ui->rotationY, ui->rotationZ, rotation, facade.isLoaded());
-    setPoint(ui->scaleX, ui->scaleY, ui->scaleZ, scale, facade.isLoaded());
+    setPoint(ui->positionX, ui->positionY, ui->positionZ, position);
+    setPoint(ui->rotationX, ui->rotationY, ui->rotationZ, rotation);
+    setPoint(ui->scaleX, ui->scaleY, ui->scaleZ, scale);
+    updateEnabled();
+}
+
+void MainWindow::updateEnabled() {
+    ui->positionX->setEnabled(facade.isLoaded());
+    ui->positionY->setEnabled(facade.isLoaded());
+    ui->positionZ->setEnabled(facade.isLoaded());
+    ui->rotationX->setEnabled(facade.isLoaded());
+    ui->rotationY->setEnabled(facade.isLoaded());
+    ui->rotationZ->setEnabled(facade.isLoaded());
+    ui->scaleX->setEnabled(facade.isLoaded());
+    ui->scaleY->setEnabled(facade.isLoaded() && !ui->scaleByAllAxis->isChecked());
+    ui->scaleZ->setEnabled(facade.isLoaded() && !ui->scaleByAllAxis->isChecked());
+    ui->scaleByAllAxis->setEnabled(facade.isLoaded());
 }
 
 void MainWindow::selectFile() {

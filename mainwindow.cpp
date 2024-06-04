@@ -114,10 +114,12 @@ void MainWindow::selectFile() {
 
 void MainWindow::loadFile() {
     try {
+        QByteArray filename = ui->filename->text().toLocal8Bit();
+        std::string stdFilename = filename.data();
         if (normalization.use) {
-            facade.loadScene(ui->filename->text().toStdString(), NormalizationParameters(normalization.min, normalization.max));
+            facade.loadScene(stdFilename, NormalizationParameters(normalization.min, normalization.max));
         } else {
-            facade.loadScene(ui->filename->text().toStdString());
+            facade.loadScene(stdFilename);
         }
         updateUi();
     } catch (std::exception& e) {

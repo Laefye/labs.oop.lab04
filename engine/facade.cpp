@@ -4,7 +4,7 @@
 
 Facade::Facade(SceneDrawerBase* drawer) {
     this->reader = new FileReader();
-    this->_scene = 0;
+    this->_scene = new Scene();
     this->drawer = drawer;
 }
 
@@ -14,16 +14,16 @@ Facade::~Facade() {
 }
 
 void Facade::loadScene(const std::string& path) {
+    Scene* scene = new Scene(reader->read(path));
     delete this->_scene;
-    this->_scene = 0;
-    this->_scene = new Scene(reader->read(path));
+    this->_scene = scene;
     draw();
 }
 
 void Facade::loadScene(const std::string& path, const NormalizationParameters& params) {
+    Scene* scene = new Scene(reader->read(path, params));
     delete this->_scene;
-    this->_scene = 0;
-    this->_scene = new Scene(reader->read(path, params));
+    this->_scene = scene;
     draw();
 }
 

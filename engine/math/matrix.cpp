@@ -1,6 +1,6 @@
 #include "matrix.h"
-#include "exceptions/incorrectindexexception.h"
-#include "exceptions/incorrectsize.h"
+#include "../exceptions/incorrectindexexception.h"
+#include "../exceptions/incorrectsize.h"
 
 Matrix::Matrix() {
     for (int i = 0; i < size; i++) {

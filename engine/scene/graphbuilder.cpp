@@ -9,18 +9,18 @@ std::shared_ptr<Figure> GraphBuilder::build() {
     std::vector<Edge> edges;
     for (size_t i = 0; i < values.size(); i++) {
         std::vector<Vertex> row;
-        for (size_t j = 0; j < values.size(); j++) {
+        for (size_t j = 0; j < values[i].size(); j++) {
             row.push_back(Vertex(Point(j, i, values[i][j])));
         }
         rows.push_back(row);
     }
     for (size_t i = 0; i < values.size(); i++) {
-        for (size_t j = 1; j < values.size(); j++) {
+        for (size_t j = 1; j < values[i].size(); j++) {
             edges.push_back(Edge(rows[i][j - 1], rows[i][j]));
         }
     }
     for (size_t i = 1; i < values.size(); i++) {
-        for (size_t j = 0; j < values.size(); j++) {
+        for (size_t j = 0; j < values[i].size(); j++) {
             edges.push_back(Edge(rows[i - 1][j], rows[i][j]));
         }
     }

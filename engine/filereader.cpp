@@ -48,7 +48,11 @@ std::vector<double> FileReader::parse(const std::string& originalLine) {
     while (end < line.length() && (end = line.find(",", index) != std::string::npos ? line.find(",", index) : line.length())) {
         std::string cell = line.substr(index, (end - index));
         index = end + 1;
-        values.push_back(std::stoi(cell));
+        try {
+            values.push_back(std::stoi(cell));
+        }  catch (std::invalid_argument e) {
+            continue;
+        }
     }
     return values;
 }

@@ -16,10 +16,29 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="1">
-     <widget class="QLineEdit" name="filename"/>
+     <widget class="QLineEdit" name="filename">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;</string>
+      </property>
+     </widget>
     </item>
     <item row="0" column="3">
      <widget class="QPushButton" name="normilize">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;</string>
+      </property>
       <property name="text">
        <string>Normilize settings</string>
       </property>
@@ -27,6 +46,15 @@
     </item>
     <item row="0" column="2">
      <widget class="QPushButton" name="load">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;</string>
+      </property>
       <property name="text">
        <string>Load</string>
       </property>
@@ -34,6 +62,15 @@
     </item>
     <item row="0" column="0">
      <widget class="QPushButton" name="setFile">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 18px;</string>
+      </property>
       <property name="text">
        <string>Select file</string>
       </property>
@@ -47,6 +84,15 @@
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="3" column="0">
         <widget class="QDoubleSpinBox" name="rotationX">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -63,6 +109,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="text">
           <string>Position</string>
          </property>
@@ -70,6 +119,15 @@
        </item>
        <item row="3" column="2">
         <widget class="QDoubleSpinBox" name="rotationZ">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -80,6 +138,15 @@
        </item>
        <item row="5" column="2">
         <widget class="QDoubleSpinBox" name="scaleZ">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -90,6 +157,15 @@
        </item>
        <item row="1" column="2">
         <widget class="QDoubleSpinBox" name="positionZ">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -109,6 +185,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="text">
           <string>Rotation</string>
          </property>
@@ -122,6 +201,9 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="text">
           <string>Scale</string>
          </property>
@@ -129,6 +211,15 @@
        </item>
        <item row="5" column="0">
         <widget class="QDoubleSpinBox" name="scaleX">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -139,6 +230,15 @@
        </item>
        <item row="1" column="0">
         <widget class="QDoubleSpinBox" name="positionX">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -149,6 +249,15 @@
        </item>
        <item row="1" column="1">
         <widget class="QDoubleSpinBox" name="positionY">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -159,6 +268,15 @@
        </item>
        <item row="5" column="1">
         <widget class="QDoubleSpinBox" name="scaleY">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -169,6 +287,15 @@
        </item>
        <item row="3" column="1">
         <widget class="QDoubleSpinBox" name="rotationY">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
          <property name="minimum">
           <double>-1000.000000000000000</double>
          </property>
@@ -202,7 +329,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>30</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

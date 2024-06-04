@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "facade.h"
+#include "qtscenedrawer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,6 +20,8 @@ public:
     ~MainWindow();
 
 private:
+    QtSceneDrawer drawer;
+    Facade facade;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

@@ -22,8 +22,10 @@ std::vector<std::vector<double>> FileReader::open(const std::string& path) {
 }
 
 Scene FileReader::read(const std::string& path) {
-
-    return Scene();
+    std::vector<std::vector<double>> values = open(path);
+    Scene scene;
+    scene.add(GraphBuilder(values).build());
+    return scene;
 }
 
 Scene FileReader::read(const std::string& path, const NormalizationParameters& parameters) {

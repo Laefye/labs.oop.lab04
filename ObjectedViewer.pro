@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     edge.cpp \
+    facade.cpp \
     figure.cpp \
     filereader.cpp \
     graphbuilder.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
     matrix.cpp \
     matrixbuilder.cpp \
     point.cpp \
+    qtscenedrawer.cpp \
     scene.cpp \
     vertex.cpp
 
@@ -28,6 +30,8 @@ HEADERS += \
     exceptions/incorrectfileexception.h \
     exceptions/incorrectindexexception.h \
     exceptions/incorrectsize.h \
+    exceptions/scenenotloadedexception.h \
+    facade.h \
     figure.h \
     figurebuilder.h \
     filereader.h \
@@ -37,7 +41,9 @@ HEADERS += \
     matrix.h \
     matrixbuilder.h \
     point.h \
+    qtscenedrawer.h \
     scene.h \
+    scenedrawerbase.h \
     sceneobject.h \
     vertex.h
 

@@ -3,6 +3,9 @@
 #include "matrixbuilder.h"
 
 Figure::Figure(const std::vector<Vertex>& vertices, const std::vector<Edge>& edges) : _vertices(vertices), _edges(edges) {
+    _position = Point(0, 0, 0);
+    _rotation = Point(0, 0, 0),
+    _scale = Point(10, 10, 10);
 }
 
 Point Figure::position() const {

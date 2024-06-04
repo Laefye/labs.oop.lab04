@@ -7,6 +7,8 @@
 class BaseFileReader
 {
 public:
+    virtual ~BaseFileReader() = default;
+
     virtual Scene read(const std::string& path) = 0;
     virtual Scene read(const std::string& path, const NormalizationParameters& parameters) = 0;
 };

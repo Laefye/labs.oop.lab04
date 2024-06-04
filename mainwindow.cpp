@@ -1,17 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-#include "filereader.h"
+#include <QGridLayout>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , drawer(this)
+    , facade(&drawer)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 
-    NormalizationParameters params(0, 10);
-    FileReader reader;
-    reader.read("/home/laefye/Downloads/meow.csv", params);
+    facade.loadScene("/home/laefye/Downloads/meow.csv");
+    QGridLayout* layout = (QGridLayout*) this->centralWidget()->layout();
+    layout->addWidget(&this->drawer, 1, 0, 2, 1);
+    facade.draw();
 }
 
 MainWindow::~MainWindow()
